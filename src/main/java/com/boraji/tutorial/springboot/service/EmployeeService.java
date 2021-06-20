@@ -22,11 +22,4 @@ public class EmployeeService {
 	public List<Employee> getAllEmployees() {
 		return employeeRepository.findAll();
 	}
-	
-	public void initEmployees() {
-		Employee emp1 = new Employee("emp1");
-		Employee emp2 = new Employee("emp2");
-		
-		employeeRepository.saveAll(Lists.newArrayList(emp1, emp2));
-	}
 }
