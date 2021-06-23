@@ -6,38 +6,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="person")
+@Table(name = "person")
+@Data
+@NoArgsConstructor
 public class Employee {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
-	@Size(min=3, max=20)
-	private String name;
-	
-	public Employee(String name) {
-		this.name = name;
-	}
-	
-	public Employee() {}
 
-	public Long getId() {
-		return id;
-	}
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+  @Size(min = 3, max = 20)
+  private String name;
 
-	public String getName() {
-		return name;
-	}
+  public Employee(String name) {
+    this.name = name;
+  }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
 }
