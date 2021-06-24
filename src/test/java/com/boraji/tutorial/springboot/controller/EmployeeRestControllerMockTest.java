@@ -10,6 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.boraji.tutorial.springboot.entity.Employee;
 import com.boraji.tutorial.springboot.service.EmployeeService;
+import com.boraji.tutorial.springboot.utils.UtilTools;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -27,6 +28,9 @@ public class EmployeeRestControllerMockTest {
 
   @MockBean
   private EmployeeService employeeService;
+
+  @MockBean
+  private UtilTools utilTools;
 
   @Test
   public void givenEmployees_whenGetEmployees_thenReturnJsonArray() throws Exception {
