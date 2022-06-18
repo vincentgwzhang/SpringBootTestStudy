@@ -8,6 +8,6 @@ import com.boraji.tutorial.springboot.entity.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 	
-	public Employee findByName(String name);
+	Employee findByName(String name);
 	
 }

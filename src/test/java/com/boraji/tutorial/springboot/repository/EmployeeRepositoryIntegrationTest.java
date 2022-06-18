@@ -9,7 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
 @DataJpaTest
-public class EmployeeRepositoryIntegrationTest {
+class EmployeeRepositoryIntegrationTest {
 
   @Autowired
   private TestEntityManager entityManager;
@@ -18,7 +18,7 @@ public class EmployeeRepositoryIntegrationTest {
   private EmployeeRepository employeeRepository;
 
   @Test
-  public void whenFindByName_thenReturnEmployee() {
+  void whenFindByName_thenReturnEmployee() {
 
     //give
     Employee alex = new Employee("alex");

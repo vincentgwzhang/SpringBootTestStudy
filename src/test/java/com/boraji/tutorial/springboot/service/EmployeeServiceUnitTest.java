@@ -15,7 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 @SpringBootTest
-public class EmployeeServiceUnitTest {
+class EmployeeServiceUnitTest {
 
   @Autowired
   private EmployeeService employeeService;
@@ -33,13 +33,13 @@ public class EmployeeServiceUnitTest {
   }
 
   @Test
-  public void whenValidName_thenEmployeeShouldBeFound() {
+  void whenValidName_thenEmployeeShouldBeFound() {
     Employee found = employeeService.getEmployeeByName(employeeName);
     assertThat(found.getName()).isEqualTo(employeeName);
   }
 
   @Test
-  public void testGetAllEmployees() {
+  void testGetAllEmployees() {
     List<Employee> employees = employeeService.getAllEmployees();
     assertThat(employees).isNotEmpty();
     verify(employeeRepository).findAll();

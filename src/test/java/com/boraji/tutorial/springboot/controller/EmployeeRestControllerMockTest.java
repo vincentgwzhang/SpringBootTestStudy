@@ -21,7 +21,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(EmployeeRestController.class)
-public class EmployeeRestControllerMockTest {
+class EmployeeRestControllerMockTest {
 
   @Autowired
   private MockMvc mvc;
@@ -33,7 +33,7 @@ public class EmployeeRestControllerMockTest {
   private UtilTools utilTools;
 
   @Test
-  public void givenEmployees_whenGetEmployees_thenReturnJsonArray() throws Exception {
+  void givenEmployees_whenGetEmployees_thenReturnJsonArray() throws Exception {
     Employee alex = new Employee("alex");
 
     List<Employee> allEmployees = Arrays.asList(alex);

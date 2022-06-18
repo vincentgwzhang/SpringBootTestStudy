@@ -12,13 +12,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @ContextConfiguration(classes=AppConfig.class, loader= AnnotationConfigContextLoader.class)
 @TestPropertySource("classpath:application.properties")// 一定要加这个
-public class AppConfigTest {
+class AppConfigTest {
 
   @Autowired
   private UtilTools utilTools;
 
   @Test
-  public void testIfUtilTools() {
+  void testIfUtilTools() {
     assertThat(utilTools).isNotNull();
     assertThat(utilTools.getVar1()).isEqualTo(123);
     assertThat(utilTools.getVar2()).isEqualTo("abc");

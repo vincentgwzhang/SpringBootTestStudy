@@ -14,14 +14,17 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.1</version>
+		<version>2.7.0</version>
 		<relativePath/>
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>16</java.version>
+		<java.version>17</java.version>
+
+		<guava.version>31.1-jre</guava.version>
+		<spring-boot.version>2.7.0</spring-boot.version>
 	</properties>
 
 	<dependencies>
@@ -94,7 +97,7 @@
 		<dependency>
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
-		    <version>26.0-jre</version>
+		    <version>${guava.version}</version>
 		</dependency>
 		
 		<dependency>
@@ -114,23 +117,22 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
 			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
 				<configuration>
-					<release>16</release>
+					<release>17</release>
 				</configuration>
 			</plugin>
 
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
-				<version>3.7.0.1746</version>
-				<configuration>
-					<sonar.projectKey>SpringBootTestStudy</sonar.projectKey>
-				</configuration>
+				<version>3.9.1.2184</version>
 			</plugin>
 
 			<plugin>
@@ -154,4 +156,18 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.projectKey>SpringBootTestStudy</sonar.projectKey>
+				<sonar.host.url>http://localhost:9000</sonar.host.url>
+				<sonar.login>sqp_5cbc294bf6c5b40536cbd41727970c0606b81d27</sonar.login>
+			</properties>
+		</profile>
+	</profiles>
 </project>

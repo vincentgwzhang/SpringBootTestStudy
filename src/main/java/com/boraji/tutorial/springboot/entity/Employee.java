@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Employee {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
   @Size(min = 3, max = 20)
