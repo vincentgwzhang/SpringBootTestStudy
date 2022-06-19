@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <title>用户注册</title>
+</head>
+<body class="m-3">
+<h1>用户注册</h1>
+<div class="col-4">
+    <form th:action="@{/register}" th:object="${user}" method="post">
+        <div class="py-1">
+            <div>
+                <label for="name"> 用户名称： </label>
+                <input type="text" class="form-control" th:field="*{name}" th:errorclass="is-invalid" />
+                <div class="invalid-feedback" th:errors="*{name}"></div>
+            </div>
+        </div>
+        <div class="py-1">
+            <label for="email"> 邮件地址： </label>
+            <input type="email" class="form-control" th:field="*{email}" th:errorclass="is-invalid" />
+            <div class="invalid-feedback" th:errors="*{email}"></div>
+        </div>
+        <div class="py-1">
+            <label for="age"> 注册年龄： </label>
+            <input type="number" class="form-control" th:field="*{age}" th:errorclass="is-invalid" />
+            <div class="invalid-feedback" th:errors="*{age}"></div>
+        </div>
+        <hr />
+        <button class="btn btn-success btn-lg">提交</button>
+    </form>
+</div>
+
+<script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
